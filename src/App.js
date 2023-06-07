@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Logo from "./components/Logo";
+import Mains from "./components/Mains";
+import Extras from "./components/Extras";
+import Total from "./components/Total";
+import Order from "./components/Order";
+import { Provider } from "./Context";
+import data from "./data";
 
-function App() {
+import "./styles.css";
+
+export default function App() {
+  const mains = data.mains
+  const sides = data.sides;
+  const drinks = data.drinks;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider>
+      <div className="menu">
+        <Logo />
+        <Mains meals={mains} />
+        <aside className="aside">
+          <Extras type="Sides" items={sides} />
+          <Extras type="Drinks" items={drinks} />
+        </aside>
+        <Total />
+        <Order />
+      </div>
+    </Provider>
   );
 }
-
-export default App;

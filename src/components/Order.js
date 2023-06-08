@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import Web3 from "web3";
 
 const ContractButton = () => {
-  const contractAddress = "0xFA5215d4504Df7F619c255Abb94397397c5c1c89";
+  const contractAddress = "0x741A6116B361fCd6D8F7e21d585377bf802Cc9C4";
   const contractABI = [
 	{
 		"inputs": [],
